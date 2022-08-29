@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BiSearchAlt } from 'react-icons/bi';
 
 import axios from "axios";
 
@@ -31,7 +32,7 @@ function Category() {
 
                         <input className="searchbar m-2" placeholder="   search" type="search" />
 
-                        <button className="btn btn-outline-dark "><b>Search</b></button>
+                        <button className="btn btn-outline-dark "><b>search<span className="px-2"><BiSearchAlt/></span></b></button>
 
                     </div>
 

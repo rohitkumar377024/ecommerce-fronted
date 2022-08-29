@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FiLogIn } from 'react-icons/fi';
 
 function Loginpage() {
 
@@ -38,11 +39,7 @@ function Loginpage() {
 
                 <form>
 
-                    <div className="border d-flex  p-3 m-3 justify-contian-center align-items-top text-center">
-
-                        <p><b>login</b></p>
-
-                    </div>
+                    <h1>Log In <span><FiLogIn/></span></h1>
 
                     <input className="namebar rounded-3" type="text" placeholder="   Name or Email" onChange={(e) => setName(e.target.value)} /><br /><br />
 
