@@ -32,7 +32,48 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.categoryimage {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  
+}
+
+.categorybox {
+  height: 50%;
+  width: 50%;
+  display: flex;
+  justify-content:center;
+  flex-direction: column;
+
+
+}
+.categorytext{
+  color: red;
+  font-size: large;
+  font-style: bold;
+
+}
+.searchbar{
+  width: 70%;
+}
+.namebar{
+  width: 500px;
+  height: 50px;
+ 
+}.passwordbar{
+  width: 500px;
+  height:50px;
+}
+.loginpageimage{
+  height: 100%;
+  width: 100%;
 }

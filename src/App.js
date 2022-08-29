@@ -7,9 +7,10 @@ import Home from './pages/home';
 import About from './pages/About';
 import Contact from './pages/contact';
 import Category from './pages/category';
-import Itemspages from "./pages/itemspages";
+
 import Loginpage from './pages/loginpage';
 import Register from './Register';
+
 
 
 function App() {
@@ -23,9 +24,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/category" element={<Category />} />
-          <Route path='/itemspages' element={<Itemspages />} />
           <Route path='/Loginpage' element={<Loginpage/>}/>
           <Route path='/Register' element={<Register/>}/>
+         
         </Routes>
       </BrowserRouter>
     </div>

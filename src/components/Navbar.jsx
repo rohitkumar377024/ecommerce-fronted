@@ -18,7 +18,7 @@ function Navbar() {
                     <Link to="./category" className="text-dark text-decoration-none"><b>Category</b></Link>
                     <Link to="./Loginpage" className="text-dark text-decoration-none"><b>Loginpage</b></Link>
                     <Link to="./Register" className="text-dark text-decoration-none"><b>Register</b></Link>
-
+                  
 
                 </div>
             </div>

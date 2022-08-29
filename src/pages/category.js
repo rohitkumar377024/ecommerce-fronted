@@ -1,51 +1,53 @@
-import React,{useEffect,useState} from "react";
-import CategoryItem from "../components/CategoryItem"; 
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 
-import { chairArray } from '../chairData';
+import axios from "axios";
 
 function Category() {
-   const [data,setData]=useState([]);
 
-const navigate=useNavigate();
-
- useEffect (() =>{
-    // axios
-    // .get("http://localhost:5000/products/")
-    // .then((res) => setData(res.data.message))
-    // .catch((err) => console.log(err));
-},[]);
+    const [data, setData] = useState([]);
 
 
-    //const searchButton = document.getElementById('search-button');
-    //const searchInput = document.getElementById('search-input');
-    //searchButton.addEventListener('click', () => {
-    //const inputValue = searchInput.value;
-    //alert(inputValue);
-    // });
+    useEffect(() => {
+
+        axios
+            .get("http://localhost:5000/category")
+
+            .then(response => setData(response.data.data))
+
+
+    }, []);
+
 
     return (
         <div className="container" >
-            <div className="text-center  container m-5 ">
+
+            <div className="text-center container m-5 ">
 
                 <h1><b>Search your dream furniture.</b></h1>
 
                 <div className="d-flex container justify-content-center p-2">
 
-                    <div className="px-5 m-2  container">
+                    <div className="px-5 m-2 container">
 
-                        <input  className=" " type="search"/>
-                    
-                        <button className="btn btn-outline-dark mx-2 "><b>Search</b></button>
-                        
+                        <input className="searchbar m-2" placeholder="   search" type="search" />
+
+                        <button className="btn btn-outline-dark "><b>Search</b></button>
+
                     </div>
-                </div> 
+
+                </div>
+                <div className="d-flex">
+                    {data.map(item => <div className="categorybox m-3">
+
+                        <img className="categoryimage" src={item.imageUrl} />
+
+                        <p className="categorytext">{item.name}</p>
+
+                    </div>)}
+                </div>
 
             </div>
-            <div className="d-flex flex-wrap  p-2 gap-2 justify-content-center ">
-                {chairArray.map(chair => <CategoryItem name={chair.name} image={chair.image} />)}
-            </div>
+
         </div>
     )
 }
