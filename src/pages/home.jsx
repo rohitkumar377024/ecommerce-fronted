@@ -1,8 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import SimpleImageSlider from "react-simple-image-slider";
 //import {Link} from "react-router-dom";
  
 function Home (){
+
+    let navigate = useNavigate
+     
+    navigate ('/productlist')
+
 
     const images = [
         { url: "https://www.ikea.com/in/en/images/products/bergmund-chair-cover-orrsta-light-grey__0859542_pe780965_s5.jpg" },
@@ -22,7 +28,7 @@ function Home (){
                 <h1><b>Welcome to <br/>your dream furniture.</b></h1>
 
                 <div>
-                      <button className='btn  btn-outline-dark px-5 py-2'><b>SHOP NOW</b></button>
+                      <button  onClick={()=>navigate("/productlist")} className='btn  btn-outline-dark px-5 py-2'><b>SHOP NOW</b></button>
                 </div>    
             </div>
 

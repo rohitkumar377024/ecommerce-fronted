@@ -1,55 +1,55 @@
-import React, { useEffect, useState } from "react";
-import { BiSearchAlt } from 'react-icons/bi';
+// import React, { useEffect, useState } from "react";
+// import { BiSearchAlt } from 'react-icons/bi';
 
-import axios from "axios";
+// import axios from "axios";
 
-function Category() {
+// function Category() {
 
-    const [data, setData] = useState([]);
-
-
-    useEffect(() => {
-
-        axios
-            .get("http://localhost:5000/category")
-
-            .then(response => setData(response.data.data))
+//     const [data, setData] = useState([]);
 
 
-    }, []);
+//     useEffect(() => {
+
+//         axios
+//             .get("http://localhost:5000/category")
+
+//             .then(response => setData(response.data.data))
 
 
-    return (
-        <div className="container" >
+//     }, []);
 
-            <div className="text-center container m-5 ">
 
-                <h1><b>Search your dream furniture.</b></h1>
+//     return (
+//         <div className="container" >
 
-                <div className="d-flex container justify-content-center p-2">
+//             <div className="text-center container m-5 ">
 
-                    <div className="px-5 m-2 container">
+//                 <h1><b>Search your dream furniture.</b></h1>
 
-                        <input className="searchbar m-2" placeholder="   search" type="search" />
+//                 <div className="d-flex container justify-content-center p-2">
 
-                        <button className="btn btn-outline-dark "><b>search<span className="px-2"><BiSearchAlt/></span></b></button>
+//                     <div className="px-5 m-2 container">
 
-                    </div>
+//                         <input className="searchbar m-2" placeholder="   search" type="search" />
 
-                </div>
-                <div className="d-flex">
-                    {data.map(item => <div className="categorybox m-3">
+//                         <button className="btn btn-outline-dark "><b>search<span className="px-2"><BiSearchAlt/></span></b></button>
 
-                        <img className="categoryimage" src={item.imageUrl} />
+//                     </div>
 
-                        <p className="categorytext">{item.name}</p>
+//                 </div>
+//                 <div className="d-flex">
+//                     {data.map(item => <div className="categorybox m-3">
 
-                    </div>)}
-                </div>
+//                         <img className="categoryimage" src={item.imageUrl} />
 
-            </div>
+//                         <p className="categorytext">{item.name}</p>
 
-        </div>
-    )
-}
-export default Category
+//                     </div>)}
+//                 </div>
+
+//             </div>
+
+//         </div>
+//     )
+// }
+// export default Category

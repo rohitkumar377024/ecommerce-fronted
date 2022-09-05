@@ -25,8 +25,10 @@ function Loginpage() {
                 console.log(response.data)
 
                 if (response.data.status == 200) {
-                     
-                    navigate("/")
+
+                    localStorage.setItem("isLoggedIn", "true");
+
+                    window.location.reload()
                 }
 
             })
@@ -39,15 +41,26 @@ function Loginpage() {
 
                 <form>
 
-                    <h1>Log In <span><FiLogIn/></span></h1>
+                    <h1 className="py-5">Log In <span><FiLogIn /></span></h1>
 
-                    <input className="namebar rounded-3" type="text" placeholder="   Name or Email" onChange={(e) => setName(e.target.value)} /><br /><br />
+                    <input className="namebar rounded-3 "
+                        type="text" 
+                        placeholder="   Name or Email"
+                        required
+                        onChange={(e) => setName(e.target.value)} /><br /><br />
 
-                    <input className="passwordbar rounded-3" type="password" placeholder="   Password" onChange={(e) => setPassword(e.target.value)} /><br /><br />
+                    <input className="passwordbar rounded-3"
+                        type="password"
+                         placeholder="   Password"
+                         required
+                        onChange={(e) => setPassword(e.target.value)} /><br /><br />
 
                     <div>
-                        <button onClick={loginuser} type="submit" className="btn px-5 btn-danger"><b>submit</b></button>
+                        <button onClick={loginuser}
+                            type="submit"
+                            className="btn px-5 m-3 btn-danger"><b>submit</b></button>
                     </div>
+                    <a href="/register" className=" text-dark text-decoration-none p-5" ><h6><b>Creat Account</b></h6></a>
                 </form>
             </div>
             <div>

@@ -11,8 +11,10 @@ function Register() {
   const [number, setNumber] = useState("");
 
   function registeruser(e) {
+
     e.preventDefault();
-    axios
+
+    axios 
       .post("http://localhost:5000/users/register", {
         name: name,
         emailAddress: email,
@@ -26,7 +28,7 @@ function Register() {
     <div className="d-flex justify-content-center align-items-center vh-100" >
         
       <form onSubmit={registeruser} className="d-flex flex-column gap-4" >
-      <h1>Register here baby</h1>
+      <h1>Register here</h1>
         <input
           onChange={(e) => setName(e.target.value)}
           type="name"
@@ -60,7 +62,7 @@ function Register() {
         />
 
         <button type="submit" className="btn btn-danger">
-          Hit the red
+          Creat Account
         </button>
       </form>
     </div>
